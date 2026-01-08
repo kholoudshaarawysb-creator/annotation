@@ -8,8 +8,8 @@ import org.aspectj.lang.annotation.Aspect;
 @Component
 @Aspect
 public class Interceptor {
-    @Around("@annotation(Kholoud)")
-    //@Around("execution(* com.example.serviceimpl..*(..))") //pointCut
+    //@Around("@annotation(Kholouud)")
+   @Around("execution(* com.example.serviceimpl..*(..))") //pointCut
     public Object annotation(ProceedingJoinPoint pjp) throws Throwable {
 
 //beforelogic 1 -> user enters an input if null returns an exception
