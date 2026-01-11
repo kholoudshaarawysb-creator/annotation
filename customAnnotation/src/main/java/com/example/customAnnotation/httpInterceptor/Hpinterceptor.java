@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 @Component
 public class Hpinterceptor implements HandlerInterceptor {
 
-//This method runs before any endpoint -> true , false
+    //This method runs before any endpoint -> true , false
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 // logic :check the annotation on the endPoint
@@ -23,10 +23,13 @@ public class Hpinterceptor implements HandlerInterceptor {
             Method method = handlerMethod.getMethod();
 
             if (method.isAnnotationPresent(Kholouud.class)) {// returns the response if the annotation exists, otherwise stops processing
-
+                Kholouud kholouud = method.getAnnotation(Kholouud.class); //annotation
+                String value = kholouud.value();
+                System.out.println("AnntationValueIs" + value);
                 return true;
-            } //controller runs and returns the response
+            }
         }
         return false;
+
     }
 }

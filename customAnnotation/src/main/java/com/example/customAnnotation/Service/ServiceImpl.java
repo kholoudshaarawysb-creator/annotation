@@ -5,7 +5,7 @@ import com.example.customAnnotation.User.User;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ServiceImpl {
+public class ServiceImpl{
   /*  ((reflectio))
     AOP --> proxyServiceimpl --> interceptor --> method(Serviceimpl) -->annotations  */
 
@@ -18,6 +18,12 @@ public class ServiceImpl {
     public User createUser (User user) {
         return  user;
     }
+
+    public void deleteUser(User user){
+System.out.println(",,,");
+    }
+
+
 
    /* @Kholouud(value = "User")
     void displayInputUser (String value) {
